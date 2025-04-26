@@ -1,0 +1,215 @@
+@media (max-width: 479px)
+{
+    /*-------------------
+        Global styles
+    -------------------*/
+    :root
+    {
+        --font_size_title: 26px;
+        --font_size_title_small: 22px;
+        --font_size_title_big: 36px;
+    }
+
+
+
+    /*-----------------
+        Mob. header
+    -----------------*/
+    .mob_header .logo
+    {
+        font-size: 20px;
+    }
+
+
+
+    /*----------------
+        Typography
+    ----------------*/
+    .text_block h3
+    {
+        font-size: 22px;
+    }
+
+
+
+    .text_block .gallery
+    {
+        margin-left: -16px;
+    }
+
+
+    .text_block .gallery > *,
+    .text_block .gallery > *.small_w
+    {
+        width: calc(50% - 16px);
+        margin: 0 0 40px 16px;
+    }
+
+
+    .text_block figure figcaption
+    {
+        text-align: left;
+    }
+
+
+
+    /*---------------
+        Page head
+    ---------------*/
+    .page_links
+    {
+        gap: 6px;
+    }
+
+
+    .page_links a
+    {
+        font-size: 10px;
+
+        padding: 5px 10px;
+    }
+
+
+
+    /*----------
+        Quiz
+    ----------*/
+    .quiz .step .title
+    {
+        font-size: 22px;
+    }
+
+
+    .quiz .step .row
+    {
+        margin-left: 0;
+    }
+
+
+    .quiz .step .row > *
+    {
+        width: 100%;
+        margin-left: 0;
+    }
+
+
+    .quiz .step5 .form .line
+    {
+        width: 100%;
+    }
+
+
+
+    /*-------------
+        Catalog
+    -------------*/
+    .catalog .category .info
+    {
+        padding: 16px 14px;
+    }
+
+
+    .catalog .category .name
+    {
+        font-size: 14px;
+    }
+
+
+    .catalog .big .category .name
+    {
+        font-size: 18px;
+
+        width: calc(100% - 34px);
+    }
+
+
+    .catalog .category .arrow
+    {
+        width: 26px;
+        height: 26px;
+    }
+
+
+
+    /*------------------
+        Product info
+    ------------------*/
+    .product_info .schema .link
+    {
+        width: calc(50% - 7px);
+        padding-bottom: calc(50% - 7px);
+    }
+
+
+    .product_info .schema .image
+    {
+        padding: 3px;
+    }
+
+
+    .product_info .buy_by_phone .label
+    {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 8px;
+
+        text-align: center;
+    }
+
+
+    .product_info .price
+    {
+        font-size: 22px;
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .product_info .buy_btn
+    {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+
+
+    /*------------------
+        Project info
+    ------------------*/
+    .project_info .slogan
+    {
+        font-size: 16px;
+    }
+
+
+
+    /*-------------------
+        Photo gallery
+    -------------------*/
+    .photo_gallery .row > *
+    {
+        width: calc(50% - 15px);
+    }
+
+
+
+    /*------------------------
+        PopUp - City modal
+    ------------------------*/
+    #city_modal .btn
+    {
+        width: 100%;
+    }
+
+
+
+    /*-------------------------------
+        PopUp - Select city modal
+    -------------------------------*/
+    #select_city_modal .examples .items
+    {
+        width: 100%;
+    }
+}

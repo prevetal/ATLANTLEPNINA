@@ -1,0 +1,499 @@
+@media print,
+(max-width: 1023px)
+{
+    /*-------------------
+        Global styles
+    -------------------*/
+    :root
+    {
+        --sidebar_width: 100%;
+        --font_size: 16px;
+        --font_size_title: 40px;
+        --font_size_title_small: 36px;
+        --font_size_title_big: 52px;
+    }
+
+
+    .content_flex .content
+    {
+        width: 100%;
+    }
+
+
+    .cont
+    {
+        padding: 0 18px;
+    }
+
+
+
+    /*--------------
+        Fancybox
+    --------------*/
+    .fancybox__slide
+    {
+        padding: 18px;
+    }
+
+
+
+    /*---------------
+        Accordion
+    ---------------*/
+    .accordion_item .head
+    {
+        padding: 16px 20px;
+    }
+
+
+    .accordion_item .data
+    {
+        padding: 0 20px 20px;
+    }
+
+
+
+    /*------------
+        Header
+    ------------*/
+    header
+    {
+        display: none;
+    }
+
+
+
+    /*-----------------
+        Mob. header
+    -----------------*/
+    .mob_header
+    {
+        display: block;
+    }
+
+
+
+    /*---------------
+        Page head
+    ---------------*/
+    .page_links a
+    {
+        padding: 8px 15px;
+    }
+
+
+
+    /*----------------
+        Block head
+    ----------------*/
+    .block_head.pad_l
+    {
+        padding-left: 30px;
+    }
+
+
+    .block_head .title br
+    {
+        display: none;
+    }
+
+
+
+    /*------------------
+        Form elements
+    ------------------*/
+    .form .columns > *.width1of3
+    {
+        width: calc(50% - var(--form_columns_offset));
+    }
+
+
+
+    /*----------------
+        Typography
+    ----------------*/
+    .text_block h3
+    {
+        font-size: 28px;
+    }
+
+
+    .text_block ul
+    {
+        padding-left: 20px;
+    }
+
+
+    .text_block ul li:before
+    {
+        top: 7px;
+
+        width: 6px;
+        height: 6px;
+    }
+
+
+    .text_block table th,
+    .text_block table td
+    {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+
+
+    /*-------------
+        Sidebar
+    -------------*/
+    aside
+    {
+        gap: 40px;
+    }
+
+
+
+    /*-------------------
+        First section
+    -------------------*/
+    .first_section .cont
+    {
+        min-height: 698px;
+    }
+
+
+    .first_section .video_link,
+    .first_section .video_link .thumb
+    {
+        width: 116px;
+        height: 116px;
+    }
+
+
+
+    /*----------
+        Quiz
+    ----------*/
+    .quiz .data
+    {
+        padding: 30px;
+    }
+
+
+    .quiz .step .title
+    {
+        font-size: 28px;
+    }
+
+
+    .quiz .step .options,
+    .quiz .bottom
+    {
+        margin-top: 30px;
+    }
+
+
+
+    /*----------------
+        Big banner
+    ----------------*/
+    .big_banner .data
+    {
+        height: 400px;
+        padding: 40px;
+    }
+
+
+    .big_banner .title
+    {
+        font-size: 28px;
+    }
+
+
+
+    /*--------------
+        Articles
+    --------------*/
+    .articles .row > *
+    {
+        width: calc(50% - 15px);
+    }
+
+
+
+    /*--------------
+        Services
+    --------------*/
+    .services .row > *
+    {
+        width: calc(50% - 15px);
+    }
+
+
+    .services .service .name
+    {
+        font-size: 24px;
+    }
+
+
+
+    /*--------------
+        Projects
+    --------------*/
+    .projects .project .info
+    {
+        padding: 16px 20px;
+    }
+
+
+
+    /*-------------
+        Catalog
+    -------------*/
+    .catalog .category .info
+    {
+        padding: 16px 20px;
+    }
+
+
+    .catalog .big .category .name
+    {
+        font-size: 20px;
+    }
+
+
+
+    /*--------------
+        Products
+    --------------*/
+    .products .row > *
+    {
+        width: calc(33.333% - 15px);
+    }
+
+
+
+    /*------------------
+        Product info
+    ------------------*/
+    .product_info .images
+    {
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+
+    .product_info .data
+    {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+
+    .product_info .prev_next
+    {
+        order: 2;
+
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+
+
+
+    /*--------------
+        Feedback
+    --------------*/
+    .feedback .data
+    {
+        padding: 40px;
+    }
+
+
+    .feedback .title
+    {
+        font-size: 30px;
+    }
+
+
+
+    /*------------------
+        Project info
+    ------------------*/
+    .project_info .slogan
+    {
+        font-size: 20px;
+
+        padding: 0;
+    }
+
+
+    .project_info .slogan > div
+    {
+        width: 500px;
+    }
+
+
+    .project_info .data .section
+    {
+        gap: 40px;
+    }
+
+
+    .project_info .data .info .title
+    {
+        font-size: 24px;
+    }
+
+
+    .project_info .data .info
+    {
+        width: 100%;
+    }
+
+
+    .project_info .data .images
+    {
+        width: 100%;
+    }
+
+
+
+    /*-------------
+        Persons
+    -------------*/
+    .persons .person
+    {
+        padding: 16px 16px 0;
+    }
+
+
+    .persons .person .info
+    {
+        margin-right: 0;
+        margin-left: 0;
+        padding: 16px 0;
+    }
+
+
+
+    /*----------------------
+        Related articles
+    ----------------------*/
+    .related_articles .block_head
+    {
+        display: block;
+    }
+
+
+    .related_articles .swiper .controls
+    {
+        display: flex;
+    }
+
+
+
+    /*-------------------
+        Contacts info
+    -------------------*/
+    .contacts_info .item .val
+    {
+        font-size: 24px;
+    }
+
+
+    .contacts_info .map
+    {
+        width: 100%;
+    }
+
+
+    .contacts_info .requisite
+    {
+        width: 100%;
+    }
+
+
+    .contacts_info .files
+    {
+        width: 100%;
+    }
+
+
+
+    /*------------
+        Footer
+    ------------*/
+    footer
+    {
+        gap: 40px;
+    }
+
+
+    footer .col_left
+    {
+        width: 300px;
+    }
+
+
+    footer .menu,
+    footer .contacts
+    {
+        width: auto;
+    }
+
+
+    footer .messengers
+    {
+        width: 100%;
+    }
+
+
+    footer .privacy_policy_link
+    {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+
+    footer .creator
+    {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+
+
+    /*-----------
+        PopUp
+    -----------*/
+    .modal_title
+    {
+        font-size: 30px;
+    }
+
+
+
+    /*---------------------
+        PopUp - Success
+    ---------------------*/
+    .modal.success
+    {
+        padding: 40px;
+    }
+
+
+    .modal.success .icon
+    {
+        width: 140px;
+        height: 140px;
+    }
+
+
+
+    /*-------------------------
+        PopUp - Order modal
+    -------------------------*/
+    #order_modal
+    {
+        padding: 40px;
+    }
+}
