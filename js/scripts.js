@@ -705,6 +705,26 @@ document.addEventListener('DOMContentLoaded', function() {
 		$('.quiz .bottom .progress .current').text(quizCurrentStep)
 		$('.quiz .bottom .progress .line div').width(100 / quizTotalSteps * quizCurrentStep + '%')
 	})
+
+
+	// Animation
+	const animationBoxes = document.querySelectorAll('.animate')
+
+	function scrollTracking(entries) {
+		for (const entry of entries) {
+			if (entry.target.classList.contains('animate')) {
+				if (entry.intersectionRatio >= 0.2 && !entry.target.classList.contains('animated')) {
+					entry.target.classList.add('animated')
+				}
+			}
+		}
+	}
+
+	const animationObserver = new IntersectionObserver(scrollTracking, {
+		threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+	})
+
+	animationBoxes.forEach(element => animationObserver.observe(element))
 })
 
 

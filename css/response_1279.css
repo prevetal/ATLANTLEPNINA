@@ -37,6 +37,18 @@
 
 
 
+    /*-------------
+        Animate
+    -------------*/
+    .animate.delay
+    .animate.delay2
+    .animate.delay3
+    {
+        transition-delay: 0s;
+    }
+
+
+
     /*------------
         Header
     ------------*/
