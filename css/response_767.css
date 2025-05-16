@@ -757,4 +757,21 @@
         width: 116px;
         height: 116px;
     }
+
+
+
+    /*---------------
+        Favorites
+    ---------------*/
+    #favorites
+    {
+        width: 330px;
+        padding: 30px 20px 20px;
+    }
+
+
+    #favorites .close_btn
+    {
+        right: 20px;
+    }
 }

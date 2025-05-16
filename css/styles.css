@@ -604,6 +604,72 @@ button
 
 
 
+/*-------------------
+    Notifications
+-------------------*/
+.notifications
+{
+    position: fixed;
+    z-index: 90;
+    bottom: 0;
+    left: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 391px;
+    max-width: 100%;
+    padding: 12px 30px;
+
+    transition: .2s linear;
+
+    gap: 12px;
+}
+
+
+.notifications.show
+{
+    transform: translateX(-100%);
+}
+
+
+.notifications .notification
+{
+    line-height: 120%;
+
+    position: relative;
+
+    padding: 30px;
+
+    color: #fff;
+    border-radius: 0 15px;
+    background: rgba(42, 33, 31, .80);
+}
+
+
+.notifications .notification .close_btn
+{
+    position: absolute;
+    top: 5px;
+    right: 3px;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+}
+
+
+.notifications .notification .close_btn .icon
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+
 /*------------
     Header
 ------------*/
@@ -616,6 +682,9 @@ header
 
     width: 100%;
     padding: 42px 0;
+
+    transition: .2s linear;
+    transition-property: padding, background;
 }
 
 
@@ -674,7 +743,6 @@ header .menu_btn:hover
 
 header .location
 {
-    margin-right: auto;
     margin-left: 40px;
 }
 
@@ -708,6 +776,47 @@ header .location .current .icon
 
 
 header .location .current:hover
+{
+    color: #151414;
+}
+
+
+
+header .favorite
+{
+    margin-left: 20px;
+}
+
+
+header .favorite .btn
+{
+    font-size: 10px;
+    line-height: 120%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    transition: color .2s linear;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    gap: 8px;
+}
+
+
+header .favorite .btn .icon
+{
+    display: block;
+
+    width: 18px;
+    height: 16px;
+}
+
+
+header .favorite .btn:hover
 {
     color: #151414;
 }
@@ -875,12 +984,8 @@ header.absolute .menu_btn:hover
 }
 
 
-header.absolute .location .current:hover
-{
-    color: #d0cac7;
-}
-
-
+header.absolute .location .current:hover,
+header.absolute .favorite .btn:hover,
 header.absolute .phone a:hover,
 header.absolute .messengers a:hover
 {
@@ -899,6 +1004,67 @@ header.absolute .duscuss_btn:hover
     color: var(--text_color);
     border-color: #fff;
     background: #fff;
+}
+
+
+
+header.fixed
+{
+    position: fixed;
+
+    padding: 14px 0;
+
+    color: var(--text_color);
+    background: #fff;
+}
+
+
+.with-fancybox header.fixed
+{
+    width: calc(100% - var(--scroll_width));
+}
+
+
+header.fixed:before
+{
+    display: none;
+}
+
+
+header.fixed .menu_btn
+{
+    border-color: var(--text_color);
+}
+
+
+header.fixed .menu_btn:hover
+{
+    color: #fff;
+    border-color: var(--text_color);
+    background: var(--text_color);
+}
+
+
+header.fixed .location .current:hover,
+header.fixed .favorite .btn:hover,
+header.fixed .phone a:hover,
+header.fixed .messengers a:hover
+{
+    color: #151414;
+}
+
+
+header.fixed .duscuss_btn
+{
+    border-color: var(--text_color);
+}
+
+
+header.fixed .duscuss_btn:hover
+{
+    color: #fff;
+    border-color: var(--text_color);
+    background: var(--text_color);
 }
 
 
@@ -6574,6 +6740,215 @@ aside
     text-decoration: none;
 
     color: currentColor;
+}
+
+
+
+/*---------------
+    Favorites
+---------------*/
+#favorites
+{
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    right: 100%;
+
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+
+    width: 495px;
+    max-width: 100%;
+    height: 100%;
+    padding: 41px 85px;
+
+    transition: .2s linear;
+
+    background: #fff;
+
+    overscroll-behavior-y: contain;
+}
+
+
+#favorites.show
+{
+    transform: translateX(100%);
+}
+
+
+#favorites .close_btn
+{
+    position: absolute;
+    z-index: 10;
+    top: 32px;
+    right: 33px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    color: #382312;
+}
+
+
+#favorites .close_btn .icon
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+#favorites .title
+{
+    font-size: 20px;
+    line-height: 14px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    margin-bottom: 30px;
+
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+
+#favorites .list
+{
+    display: flex;
+    overflow-x: visible;
+    overflow-y: auto;
+    flex-direction: column;
+    flex-grow: 1;
+
+    overscroll-behavior-y: contain;
+    gap: 10px;
+}
+
+
+#favorites .product
+{
+    display: flex;
+    align-content: stretch;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding-right: 20px;
+
+    border: 1px solid #f3efed;
+    box-shadow: 0 0 8px 0 #f0e8e0;
+}
+
+
+#favorites .product .thumb
+{
+    position: relative;
+
+    display: block;
+
+    width: 85px;
+    max-width: 100%;
+    min-height: 85px;
+
+    text-decoration: none;
+
+    color: currentColor;
+    background: #ddd;
+}
+
+
+#favorites .product .thumb img
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+#favorites .product .thumb + *
+{
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100% - 160px);
+    padding: 12px 14px;
+
+    gap: 12px;
+}
+
+
+#favorites .product .name
+{
+    line-height: 13px;
+}
+
+
+#favorites .product .name a
+{
+    display: inline-block;
+
+    vertical-align: top;
+    text-decoration: none;
+
+    color: currentColor;
+}
+
+
+#favorites .product .size
+{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 10px;
+
+    color: #9e9394;
+}
+
+
+#favorites .product .price
+{
+    font-size: 14px;
+    line-height: 10px;
+}
+
+
+#favorites .product .price span
+{
+    color: #9e9394;
+}
+
+
+#favorites .product .remove_btn
+{
+    display: block;
+    align-self: center;
+
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+}
+
+
+#favorites .product .remove_btn .icon
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
 }
 
 

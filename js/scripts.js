@@ -512,10 +512,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 	// Product to favorite
+	let notificationsTimeout
+
 	$('.product .favorite_btn, .product_info .favorite_btn').click(function(e) {
 		e.preventDefault()
 
 		$(this).toggleClass('active')
+
+		if ($(this).hasClass('active')) {
+			if (notificationsTimeout) {
+				clearTimeout(notificationsTimeout)
+			}
+
+			$('.notifications').addClass('show')
+
+			notificationsTimeout = setTimeout(() => $('.notifications').removeClass('show'), 3000)
+		}
+	})
+
+
+	$('.notification .close_btn').click(function(e) {
+		e.preventDefault()
+
+		$('.notifications').removeClass('show')
 	})
 
 
@@ -725,6 +744,46 @@ document.addEventListener('DOMContentLoaded', function() {
 	})
 
 	animationBoxes.forEach(element => animationObserver.observe(element))
+
+
+	// Menu
+	$('header .favorite .btn').click(function(e) {
+		e.preventDefault()
+
+		$('#favorites').addClass('show')
+		$('.overlay').fadeIn(200)
+	})
+
+	$('#favorites .close_btn, .overlay').click(function(e) {
+		e.preventDefault()
+
+		$('#favorites').removeClass('show')
+		$('.overlay').fadeOut(200)
+	})
+})
+
+
+
+window.addEventListener('load', function () {
+	// Fix. header
+	headerInit = true,
+	headerHeight = $('header').outerHeight()
+
+	$('header:not(.absolute)').wrap('<div class="header_wrap"></div>')
+	$('.header_wrap').height(headerHeight)
+
+	headerInit && $(window).scrollTop() > 0
+		? $('header').addClass('fixed')
+		: $('header').removeClass('fixed')
+})
+
+
+
+window.addEventListener('scroll', function () {
+	// Fix. header
+	typeof headerInit !== 'undefined' && headerInit && $(window).scrollTop() > 0
+		? $('header').addClass('fixed')
+		: $('header').removeClass('fixed')
 })
 
 
@@ -737,6 +796,22 @@ window.addEventListener('resize', function () {
 	if (typeof WW !== 'undefined' && WW != windowW) {
 		// Overwrite window width
 		WW = window.innerWidth || document.clientWidth || BODY.clientWidth
+
+
+		// Fix. header
+		headerInit = false
+		$('.header_wrap').height('auto')
+
+		setTimeout(() => {
+			headerInit = true
+			headerHeight = $('header').outerHeight()
+
+			$('.header_wrap').height(headerHeight)
+
+			headerInit && $(window).scrollTop() > 0
+				? $('header').addClass('fixed')
+				: $('header').removeClass('fixed')
+		}, 100)
 
 
 		// Related articles

@@ -496,4 +496,22 @@
     {
         padding: 40px;
     }
+
+
+
+    /*---------------
+        Favorites
+    ---------------*/
+    #favorites
+    {
+        width: 360px;
+        padding: 30px;
+    }
+
+
+    #favorites .close_btn
+    {
+        top: 22px;
+        right: 30px;
+    }
 }
